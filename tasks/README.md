@@ -33,17 +33,10 @@ We  provide processed data in our paper under the folder
 ```
 /VideoIC/task/comments_generation/processed_data
 ```
-, including dictionary, processed training set , development set and testing set data, and image features extracted by ResNet101 pretraining model.
+, including dictionary, processed training set , development set and testing set data.
 
 
 ---
-
-
-
-
-
-
-
 
 
 
