@@ -10,7 +10,7 @@ Information about all videos in the VideoIC dataset is in the file
 ```
 The key is the **aid** of each video, the only identification of a video on the bilibili website. You can access the video by the link
 ```
-https://www.bilibili.com/video/av[aid]"
+https://www.bilibili.com/video/av[aid]
 ```
 for example, the video with aid 10582565 can be accessed by the link
 ```
@@ -64,11 +64,14 @@ Comment files for each video is under the folder
 ```
  /VideoIC/data/comments/
 ```
-named by video's aid.
+named by the aid of a video.
 
 The comments json file contains:
 
 Key | value
 ---|---
 time(s) | a list of comments at this time stamp
+
+
+
 
