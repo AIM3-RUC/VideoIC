@@ -22,7 +22,7 @@ For the dict in the split file, attribute and explanation is below:
 Attribute | Meaning
 --- | ---
 aid | the only identification of a video
-cid | the only identification of a comments file
+cid | the only identification of a comments on the bilibili website
 title  | the title of a video shown on the bilibili website
 duration | the duration of a video (in seconds)
 comment_number  | the number of comments we got of a video
