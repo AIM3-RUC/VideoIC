@@ -22,7 +22,7 @@ Attribute and explanation of items in the dict is below:
 
 Attribute | Meaning
 --- | ---
-cid | the only identification of the comments file
+cid | the only identification of the comments on the bilibili website
 title  | the title of a video shown on the bilibili website
 duration | the duration of a video (in seconds)
 total_danmaku  | the number of comments we got of a video
