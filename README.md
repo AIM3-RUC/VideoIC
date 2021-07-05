@@ -39,7 +39,7 @@ VideoIC contains more than 5 million comments, with 1077 comments per video on a
 
 
 ### Data Download
-To protect the copyright, both the videos and comments should be download after signing the license
+To protect the copyright, the videos should be downloaded by yourself according to the aid that we provided, the comments can be download after signing the license
 ```
 License Agreement.pdf
 ```
