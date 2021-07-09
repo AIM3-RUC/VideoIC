@@ -1,6 +1,6 @@
 # VideoIC Dataset
 
-This folder contains all raw data of VideoIC dataset, including videos along with related information and live comments. \
+This folder contains the raw data of VideoIC dataset, including videos related information and live comments. \
 As VideoIC is collected according to six categories, we organize raw data according to their categories.
 
 ### Video Information
@@ -38,26 +38,6 @@ For example, the latest comments of video with aid 10582565 and cid 18518844 can
 http://comment.bilibili.com/18518844.xml
 ``` 
 
-
-
-### Videos
-All videos of VideoIC dataset is under the folder
-```
-/VideoIC/data/videos/
-```
-named by their aid, the only identification of a video on the bilibili website. You can access the video by the link
-```
-https://www.bilibili.com/video/av[aid]"
-```
-for example, the video with aid 10582565 can be accessed by the link
-```
-https://www.bilibili.com/video/av10582565
-```
-All the videos copyrights belong to the website www.bilibili.com. Please use the videos and comments for research only.
-
-
-
-
 ### Live video comments
 
 Comment files for each video is under the folder 
@@ -71,6 +51,9 @@ The comments json file contains:
 Key | value
 ---|---
 time(s) | a list of comments at this time stamp
+
+
+All the videos and comments copyrights belong to the website www.bilibili.com. Please use the videos and comments for research only.
 
 
 
