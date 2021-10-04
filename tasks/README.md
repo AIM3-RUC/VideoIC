@@ -33,7 +33,7 @@ We  provide processed data in our paper under the folder
 ```
 /VideoIC/task/comments_generation/processed_data
 ```
-, including dictionary, processed training set , development set and testing set data.
+including frame features, dictionary, processed training set , development set and testing set data.
 
 
 ---
