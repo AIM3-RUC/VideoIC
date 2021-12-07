@@ -23,10 +23,11 @@ python train.py -mode generate -data_path xxx/xxx/xxx -restore xxx/xxx/xxx/best_
 ```
 
 ## Notice
-(1) There are overlapped comments of same videos across the training and test set in the livebot official released processed data. So we give a new split for our experiments in 
+(1) There are overlapped comments of same videos across the training and test set in the livebot official released processed data. So we give a new split for our experiments in:
 ```
 VideoIC/src/livebot_new_split
 ```
+The video id here are the chatid in the raw xml file.
 
 (2) In our paper, the max_len of a comment is set to 15 (including <BOS> and <EOS> tokens). But we found that it is 20 for both livebot and videoic dataset to get the reported results in our implementation.
 
