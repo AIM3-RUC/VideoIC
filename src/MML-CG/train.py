@@ -21,14 +21,14 @@ import metrics
 
 
 # set gpu
-os.environ["CUDA_VISIBLE_DEVICES"] = '0,1'
+os.environ["CUDA_VISIBLE_DEVICES"] = '0,1,2,3'
 
 parser = argparse.ArgumentParser(description='train.py')
 # set model parameters
 parser.add_argument('-n_emb', type=int, default=512, help='Embedding size')
 parser.add_argument('-n_hidden', type=int, default=512, help='Hidden size')
 parser.add_argument('-n_head', type=int, default=8, help='Number of head')
-parser.add_argument('-n_block', type=int, default=1, help="Number of block") # value 1 for livebot dataset, value 6 for videoic dataset
+parser.add_argument('-n_block', type=int, default=1, help="Number of block") 
 
 parser.add_argument('-max_len', type=int, default=20, help="Limited length for text")
 parser.add_argument('-time_range', type=int, default=5, help='Time range')
