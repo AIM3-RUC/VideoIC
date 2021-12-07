@@ -28,7 +28,7 @@ parser = argparse.ArgumentParser(description='train.py')
 parser.add_argument('-n_emb', type=int, default=512, help='Embedding size')
 parser.add_argument('-n_hidden', type=int, default=512, help='Hidden size')
 parser.add_argument('-n_head', type=int, default=8, help='Number of head')
-parser.add_argument('-n_block', type=int, default=1, help="Number of block") 
+parser.add_argument('-n_block', type=int, default=6, help="Number of block") 
 
 parser.add_argument('-max_len', type=int, default=20, help="Limited length for text")
 parser.add_argument('-time_range', type=int, default=5, help='Time range')
@@ -44,10 +44,9 @@ parser.add_argument('-weight_decay', type=float, default=0.001, help="Learning r
 parser.add_argument('-early_stop', type=float, default=20, help="Early Stop")
 
 # data path
-parser.add_argument('-dataset', type=str, default='livebot', help='name of dataset')
 parser.add_argument('-data_path', type=str, default=None, help='dict and image path')
 parser.add_argument('-out_path', type=str, default=None, help='out path')
-parser.add_argument('-outfile', type=str, default=None, help='outfile for generation')
+parser.add_argument('-outfile', type=str, default='out.json', help='outfile for generation')
 parser.add_argument('-restore', type=str, default=None, help="Restoring model path")
 parser.add_argument('-mode', type=str, default=None)
 args = parser.parse_args()
@@ -61,26 +60,9 @@ logger.setLevel(logging.INFO)
 
 # log file
 if args.mode == 'train':
-    if args.dataset == 'livebot':
-        args.data_path = '/data2/wwy/barrage/data/livebot'
-        args.out_path = 'livebot'
-        if not os.path.exists(args.out_path):
-            os.mkdir(args.out_path)
-        logger.addHandler(logging.FileHandler(os.path.join(args.out_path, 'livebot_log'), "w"))
-    elif args.dataset == 'aim3':
-        args.data_path = '/data2/wwy/barrage/data/aim3'
-        args.out_path = 'aim3'
+    if not os.path.exists(args.out_path):
         os.mkdir(args.out_path)
-        if not os.path.exists(args.out_path):
-            os.mkdir(args.out_path)
-        logger.addHandler(logging.FileHandler(os.path.join(args.out_path, 'aim3_log'), "w"))
-else:
-    if args.dataset == 'livebot':
-        args.data_path = '/data2/wwy/barrage/data/livebot'
-        args.out_path = 'livebot'
-    elif args.dataset == 'aim3':
-        args.data_path = '/data2/wwy/barrage/data/aim3'
-        args.out_path = 'aim3'     
+    logger.addHandler(logging.FileHandler(os.path.join(args.out_path, 'log'), "w"))
     
 # load img
 images = utils.load_images(args.data_path)
