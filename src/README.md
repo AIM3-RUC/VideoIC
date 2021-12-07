@@ -29,7 +29,7 @@ VideoIC/src/livebot_new_split
 ```
 The video id here are the chatid in the raw xml file.
 
-(2) In our paper, the max_len of a comment is set to 15 (including <BOS> and <EOS> tokens). But we found that it is 20 for both livebot and videoic dataset to get the reported results in our implementation.
+(2) In our paper, the max_len of a comment is set to 15 (including BOS and EOS tokens). But we found that it is 20 for both livebot and videoic dataset to get the reported results in our implementation.
 
 (3) For ranking test, we followed the implementation of Livebot to get the candidate set. However, Their actual implementation and the statement in the paper are not align (refer to [response to livebot](https://arxiv.org/abs/2006.03022)). Our statement in Videoic inherited some of these mistakes and also had some other misrepresentations. However, it should be noted that the experimental results of all datasets in our paper were obtained under the same test setting, so these problems didn't affect the fairness of the comparison. We correct the statement here:
 
