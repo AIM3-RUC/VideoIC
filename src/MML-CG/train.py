@@ -126,7 +126,7 @@ def train():
         
     for i in range(args.epoch):
         model.train()
-        report_loss, start_time, n_samples = 0, time.time(), 0
+        report_loss, start_time, n_batches = 0, time.time(), 0
         
         for batch in train_batch:
             model.zero_grad()
@@ -139,17 +139,18 @@ def train():
             # Y: Ground truth
             Y = Variable(Y).cuda()
             
-            loss = torch.sum(model(V, S, Y))
+            multi_gpu_loss = model(V, S, Y)
+            loss = torch.sum(multi_gpu_loss)
             loss.backward()
             optim.step()
             
-            report_loss += loss.item()
-            n_samples += V.size(0)
+            report_loss += torch.mean(multi_gpu_loss).item()
+            n_batches += 1
         
         # report loss
         print('\nEpoch: %d, report_loss: %.3f, time: %.2f'
-              % (i+1, report_loss / n_samples, time.time() - start_time))
-        logger.info('\nEpoch '+str(i) + ', report_loss: '+str(report_loss/n_samples) + ' , time: ' + str(time.time() - start_time))
+              % (i+1, report_loss / n_batches, time.time() - start_time))
+        logger.info('\nEpoch '+str(i) + ', report_loss: '+str(report_loss/n_batches) + ' , time: ' + str(time.time() - start_time))
         
         # eval
         score = eval(model, valid_set)
@@ -172,20 +173,17 @@ def eval(model, valid_set):
     start_time = time.time()
     model.eval()
     valid_batch = get_dataloader(valid_set, args.batch_size, is_train=False)
-    total_loss = 0
-    total_samples = 0
-
+    loss = 0
+    total_batch = 0
     with torch.no_grad():
         for batch in valid_batch:
             V, S, Y = batch
             V = Variable(V).cuda()
             S = Variable(S).cuda()
             Y = Variable(Y).cuda()
-            
-            total_loss += torch.sum(model(V, S, Y)).item()
-            total_samples += V.size(0)
-
-    loss = total_loss / total_samples
+            loss += torch.mean(model(V, S, Y)).item()
+            total_batch += 1
+    loss = loss / total_batch
     print('Loss: ', loss)
     print("evaluting time:", time.time() - start_time)
     return -loss
