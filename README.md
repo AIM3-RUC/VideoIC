@@ -43,7 +43,7 @@ To protect the copyright, the videos should be downloaded by yourself using the 
 ```
 License Agreement.pdf
 ```
-Please sign the license and send it to jietingchen@ruc.edu.cn and we will provide the link of data.
+Please sign the license and send it to chenjieting1208@163.com and we will provide the link of data.
 
 
 
