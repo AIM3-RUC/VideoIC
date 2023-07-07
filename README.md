@@ -17,7 +17,7 @@ Danmaku have some unique interactive features:
 ***Picture of characteristic***
 
 
-## VideoIC Dataset \
+## VideoIC Dataset
 VideoIC is large scale video interactive comments dataset introduced in [VideoIC: A Video Interactive Comments Dataset and Multimodal Multitask Learning for Comments Generation](https://dl.acm.org/doi/10.1145/3394171.3413890)(*ACM MM 2020*).
 
 **(1)Large in scale** \
