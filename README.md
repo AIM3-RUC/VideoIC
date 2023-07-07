@@ -78,4 +78,4 @@ doi = {10.11896/jsjkx.200800198}
 ```
 
 
-If you have any questions about Video dataset, please contact us by jietingchen23@outlook.com or wy.wang@ruc.edu.cn.
+If you have any questions about Video dataset, please contact us by chenjieting1208@163.com or wy.wang@ruc.edu.cn.
